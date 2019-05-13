@@ -3,7 +3,6 @@ import { INCREMENT, DECREMENT } from '../actions';
 const initialState = {
   count: 0
 }
-
 // Our reducer that handles our two action cases:
 // increment and decrement. It receives the state
 // of our redux store, along with an action created
@@ -14,12 +13,12 @@ export default (state = initialState, action) => {
     case INCREMENT:
       return {
         ...state,
-        count: action.payload
+        count: ++action.payload
       }
     case DECREMENT:
       return {
         ...state,
-        count: action.payload
+        count: --action.payload,
       }
     default:
       return state;
